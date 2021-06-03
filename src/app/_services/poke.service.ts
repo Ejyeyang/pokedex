@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class PokeService {
   private baseUrl: string = 'https://pokeapi.co/api/v2/';
-
+  //pokemonList: any = [];
   constructor(
     private http: HttpClient
   ) { }
@@ -18,4 +18,14 @@ export class PokeService {
   getPokemon(name: string){
     return this.http.get(this.baseUrl + `pokemon/${name}`);
   }
+
+  // getPokemonList(){
+  //   this.getPokemons().subscribe((res: any) => {
+  //     res.results.forEach(pokemon => {
+  //       this.getPokemon(pokemon.name).subscribe((resp: any) => {
+  //         this.pokemonList.push(resp);
+  //       });
+  //     });
+  //   })
+  // }
 }

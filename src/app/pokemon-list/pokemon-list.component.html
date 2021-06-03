@@ -1,1 +1,5 @@
-<p>pokemon-list works!</p>
+<div class="row">
+  <div class="col-2" *ngFor="let pokemonn of pokemons$">
+    <app-pokemon [pokemon]='pokemonn'></app-pokemon>
+  </div>
+</div>
