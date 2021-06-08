@@ -24,7 +24,8 @@ export class PokemonListComponent implements OnInit {
         });
 
       });
-      this.pokemonsList = this.pokemons;
+
     });
+    this.pokemonsList = this.pokemons;
   }
 }
