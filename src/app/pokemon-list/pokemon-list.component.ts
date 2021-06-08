@@ -10,6 +10,7 @@ import { PokeService } from '../_services/poke.service';
 })
 export class PokemonListComponent implements OnInit {
   pokemons: any = [];
+  pokemonsList: any = [];
 
   constructor(
     private pokeService: PokeService
@@ -21,6 +22,7 @@ export class PokemonListComponent implements OnInit {
         this.pokeService.getPokemon(poke.name).subscribe((resp: any) => {
           this.pokemons.push(resp);
         });
+        this.pokemonsList = this.pokemons;
       });
     });
   }
