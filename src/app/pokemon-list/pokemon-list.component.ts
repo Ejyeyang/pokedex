@@ -9,7 +9,7 @@ import { PokeService } from '../_services/poke.service';
   ]
 })
 export class PokemonListComponent implements OnInit {
-  pokemons$: Observable<any[]>;
+  pokemons: any = [];
 
   constructor(
     private pokeService: PokeService
@@ -19,7 +19,7 @@ export class PokemonListComponent implements OnInit {
     this.pokeService.getPokemons().subscribe((res:any) => {
       res.results.forEach(poke => {
         this.pokeService.getPokemon(poke.name).subscribe((resp: any) => {
-          this.pokemons$ = resp;
+          this.pokemons.push(resp);
         });
       });
     });
